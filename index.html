@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GEODEZJA | Profesjonalne usługi geodezyjne</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* MENU */
+
+        header {
+            background: #183b2b;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4b45f;
+        }
+
+        /* GŁÓWNA SEKCJA */
+
+        .hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background: url("images/geodezja.jpg") center center / cover no-repeat;
+
+    color: white;
+}
+
+        .hero h1 {
+            font-size: 64px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #d4b45f;
+            color: #183b2b;
+            padding: 16px 32px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+        }
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-email {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.button-email:hover {
+    background: white;
+    color: #183b2b;
+}
+        /* SEKCJE */
+
+        section {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+            color: #183b2b;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+        }
+/* DLACZEGO MY */
+
+        .why-us {
+            background: #183b2b;
+            color: white;
+        }
+
+        .why-us h2 {
+            color: white;
+        }
+
+        .why-intro {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            font-size: 18px;
+            color: #e5e5e5;
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .advantage {
+            padding: 30px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .advantage:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
+        }
+
+        .advantage-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .advantage h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .advantage p {
+            color: #dddddd;
+        }
+        /* USŁUGI */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 45px auto 0;
+        }
+
+        .service {
+            padding: 30px 25px;
+            background: #f5f6f4;
+            border-radius: 10px;
+            border-top: 4px solid #d4b45f;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service h3 {
+            color: #183b2b;
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        /* KONTAKT */
+
+        .contact {
+            background: #f5f6f4;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+ .contact-box h3 {
+            color: #183b2b;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-info {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        form label {
+            margin: 15px 0 7px;
+            font-weight: bold;
+            color: #183b2b;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #183b2b;
+        }
+
+        .form-button {
+            margin-top: 25px;
+            padding: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #183b2b;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background: #d4b45f;
+            color: #183b2b;
+        }
+
+        .direct-contact {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #ddd;
+        }
+        .contact-box p {
+            font-size: 19px;
+            margin: 12px 0;
+        }
+
+        .contact-box a {
+            color: #183b2b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* STOPKA */
+
+        footer {
+            background: #183b2b;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* TELEFON */
+
+        @media (max-width: 800px) {
+
+            header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 15px;
+}
+
+            nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+nav a {
+    margin: 0;
+    font-size: 14px;
+}
+
+           .hero {
+    min-height: 75vh;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    font-size: 22px;
+}
+
+.hero p {
+    font-size: 17px;
+}
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+.advantages {
+    grid-template-columns: 1fr;
+}
+            section {
+                padding: 60px 5%;
+            }
+            .hero-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-buttons .button {
+    width: 100%;
+    max-width: 320px;
+}
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header>
+
+        <div class="logo">
+            GEODEZJA
+        </div>
+
+        <nav>
+            <a href="#o-firmie">O firmie</a>
+            <a href="#uslugi">Usługi</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+    </header>
+
+
+    <!-- STRONA GŁÓWNA -->
+
+    <section class="hero">
+
+        <h1>GEODEZJA</h1>
+
+<h2>Precyzja, doświadczenie, profesjonalizm</h2>
+
+<p>
+    Kompleksowe usługi geodezyjne
+    na terenie całej Polski.
+</p>
+
+<p>
+    Granice działek • Podziały nieruchomości • Mapy • Tyczenia • Inwentaryzacje
+</p>
+
+        <div class="hero-buttons">
+
+    <a href="tel:797503423" class="button">
+        📞 Zadzwoń: 797 503 423
+    </a>
+
+    <a href="mailto:geoswiat360@gmail.com" class="button button-email">
+        ✉️ Napisz e-mail
+    </a>
+
+</div>
+
+    </section>
+
+
+    <!-- O FIRMIE -->
+
+    <section id="o-firmie">
+
+        <h2>O firmie</h2>
+
+        <div class="about">
+
+            <p>
+                Świadczymy kompleksowe usługi geodezyjne
+                dla klientów indywidualnych, firm oraz inwestorów.
+            </p>
+
+            <br>
+
+            <p>
+                Wykonujemy pomiary i opracowania geodezyjne
+                z naciskiem na dokładność, terminowość
+                oraz profesjonalną obsługę.
+            </p>
+
+            <br>
+
+            <p>
+                Działamy na terenie całego kraju.
+            </p>
+
+        </div>
+
+    </section>
+<!-- DLACZEGO MY -->
+
+<section class="why-us">
+
+    <h2>Dlaczego warto wybrać GEODEZJĘ?</h2>
+
+    <p class="why-intro">
+        Stawiamy na dokładność, profesjonalizm i sprawną realizację
+        powierzonych nam prac geodezyjnych.
+    </p>
+
+    <div class="advantages">
+
+        <div class="advantage">
+            <div class="advantage-icon">🎯</div>
+            <h3>Precyzja</h3>
+            <p>
+                Dokładne pomiary i rzetelne opracowania geodezyjne.
+            </p>
+        </div>
+
+        <div class="advantage">
+            <div class="advantage-icon">⏱️</div>
+            <h3>Terminowość</h3>
+            <p>
+                Sprawna realizacja zleceń i indywidualne podejście do klienta.
+            </p>
+        </div>
+
+        <div class="advantage">
+            <div class="advantage-icon">🇵🇱</div>
+            <h3>Cała Polska</h3>
+            <p>
+                Realizujemy prace geodezyjne na terenie całego kraju.
+            </p>
+        </div>
+
+        <div class="advantage">
+            <div class="advantage-icon">📞</div>
+            <h3>Bezpośredni kontakt</h3>
+            <p>
+                Łatwy i szybki kontakt w sprawie realizacji zlecenia.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- USŁUGI -->
+
+    <section id="uslugi">
+
+        <h2>Nasze usługi</h2>
+
+        <div class="services">
+
+            <div class="service">
+    <div class="service-icon">📍</div>
+    <h3>Wyznaczanie granic działki</h3>
+                <p>
+                    Precyzyjne określenie przebiegu granic nieruchomości.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Podział działki</h3>
+                <p>
+                    Kompleksowa obsługa geodezyjna podziałów nieruchomości.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Mapa do celów projektowych</h3>
+                <p>
+                    Przygotowanie map niezbędnych do realizacji inwestycji.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Wyznaczanie budynku w terenie</h3>
+                <p>
+                    Dokładne wytyczanie obiektów budowlanych w terenie.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Inwentaryzacja powykonawcza</h3>
+                <p>
+                    Pomiary i opracowania geodezyjne po zakończeniu inwestycji.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Mapy geodezyjne</h3>
+                <p>
+                    Wykonywanie różnego rodzaju opracowań kartograficznych.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Rozgraniczenie nieruchomości</h3>
+                <p>
+                    Obsługa geodezyjna postępowań dotyczących granic nieruchomości.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Pomiar powierzchni i użytków</h3>
+                <p>
+                    Dokładne pomiary powierzchni oraz użytków gruntowych.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Aktualizacja danych EGiB</h3>
+                <p>
+                    Aktualizacja danych w ewidencji gruntów i budynków.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAKT -->
+
+    <section id="kontakt" class="contact">
+
+        <h2>Kontakt</h2>
+
+        <p>
+            Potrzebujesz usługi geodezyjnej?
+        </p>
+
+        <div class="contact-box">
+
+    <h3>Zapytaj o usługę</h3>
+
+    <p class="form-info">
+        Opisz krótko, czego potrzebujesz.
+        Skontaktujemy się z Tobą.
+    </p>
+
+    <form onsubmit="sendEmail(event)">
+
+        <label for="name">Imię i nazwisko</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Jan Kowalski"
+            required
+        >
+
+        <label for="phone">Numer telefonu</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="797 503 423"
+            required
+        >
+
+        <label for="email">Adres e-mail</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="twoj@email.pl"
+            required
+        >
+
+        <label for="service">Jaka usługa Cię interesuje?</label>
+        <select id="service" name="service">
+
+            <option value="">Wybierz usługę</option>
+            <option>Wyznaczanie granic działki</option>
+            <option>Podział działki</option>
+            <option>Mapa do celów projektowych</option>
+            <option>Wyznaczanie budynku w terenie</option>
+            <option>Inwentaryzacja powykonawcza</option>
+            <option>Mapy geodezyjne</option>
+            <option>Rozgraniczenie nieruchomości</option>
+            <option>Pomiar powierzchni i użytków</option>
+            <option>Aktualizacja danych EGiB</option>
+            <option>Inna usługa</option>
+
+        </select>
+
+        <label for="message">Wiadomość</label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Opisz, czego potrzebujesz..."
+            required
+        ></textarea>
+
+        <button type="submit" class="form-button">
+            Wyślij zapytanie
+        </button>
+
+    </form>
+
+    <div class="direct-contact">
+
+        <p>
+            📞 <strong>797 503 423</strong>
+        </p>
+
+        <p>
+            ✉️ <strong>geoswiat360@gmail.com</strong>
+        </p>
+
+        <p>
+            📍 Działamy na terenie całej Polski
+        </p>
+
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- STOPKA -->
+
+    <footer>
+
+        <p>
+            © 2026 GEODEZJA — Profesjonalne usługi geodezyjne
+        </p>
+
+    </footer>
+<script>
+    function sendEmail(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value;
+
+        const subject = "Zapytanie ze strony GEODEZJA";
+
+        const body =
+            "Imię i nazwisko: " + name + "%0D%0A" +
+            "Telefon: " + phone + "%0D%0A" +
+            "E-mail: " + email + "%0D%0A" +
+            "Usługa: " + service + "%0D%0A%0D%0A" +
+            "Wiadomość:%0D%0A" + message;
+
+        window.location.href =
+            "mailto:geoswiat360@gmail.com" +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + body;
+    }
+</script>
+</body>
+
+</html>
