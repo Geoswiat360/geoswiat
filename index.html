@@ -67,7 +67,16 @@
     text-align: center;
     padding: 40px 20px;
 
-    background: url("geodezja.jpg") center center / cover no-repeat;
+    background-image:
+        linear-gradient(
+            rgba(24, 59, 43, 0.65),
+            rgba(24, 59, 43, 0.65)
+        ),
+        url("geodezja.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     color: white;
 }
